@@ -176,7 +176,7 @@ impl Component for StatusBar {
                     " {one_based_line_index:>3}:{column_offset:>2} ",
                     one_based_line_index = current_line_index + 1
                 );
-                canvas.append_end(theme.position_in_file, &line_status)
+                canvas.append_end(theme.is_not_modified, &line_status)
             })
             // Name of the current mode
             .and_then(|canvas| canvas.append_start(theme.mode, &format!("  {}", mode.name)))
